@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "module-md-twilio-video": {
+      "projectType": "library",
+      "root": "projects/module-md-twilio-video",
+      "sourceRoot": "projects/module-md-twilio-video/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/module-md-twilio-video/tsconfig.lib.json",
+            "project": "projects/module-md-twilio-video/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/module-md-twilio-video/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/module-md-twilio-video/src/test.ts",
+            "tsConfig": "projects/module-md-twilio-video/tsconfig.spec.json",
+            "karmaConfig": "projects/module-md-twilio-video/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/module-md-twilio-video/tsconfig.lib.json",
+              "projects/module-md-twilio-video/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "module-md-twilio"
